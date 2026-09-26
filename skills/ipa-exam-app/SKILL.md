@@ -47,6 +47,20 @@ Debian/Ubuntu なら `sudo apt install poppler-utils` を案内する。
 プロジェクトが無ければ、`django-admin startproject` で最小のものを作ってから足す。
 どちらにするか、どこに作るかは作り始める前に確かめる。
 
+参照実装の `fe/` は、載っているサイトの次のものに頼っている。コピーしたり
+真似たりするなら、利用者のプロジェクトにあるかを確かめ、無ければ用意する。
+
+- **`base.html`** — テンプレートはすべて `{% extends 'base.html' %}`。Bootstrap 5 と
+  Font Awesome 5 を読み込み、`title`・`head`・`header`・`contents`・`extra_js` の
+  ブロックを持つもの（`content` ではなく `contents`）。上部に固定ナビバーがある前提で、
+  ヘッダーに `padding-top: 5rem` を入れている。ナビバーが無ければ詰める
+- **ログイン** — ビューは `LoginRequiredMixin` を継承し、`LOGIN_URL` は django-allauth の
+  `account_login`。ログインの仕組みが無いなら、`django.contrib.auth.urls` を足すか、
+  ミックスインからログイン必須を外す。どちらにするかは利用者に聞く
+- **設定値** — `FE_MAX_UPLOAD_BYTES`（取り込みの上限。8MB）と、それより大きい
+  `DATA_UPLOAD_MAX_MEMORY_SIZE`。区分ごとに接頭辞を変える
+- **管理画面** — 管理用の ID は Django の管理画面で付ける。`createsuperuser` まで案内する
+
 1. **分類マスタ** — 要綱の出題範囲をそのまま写す。IPA の区分はどれも要綱に
    出題範囲があるので、自分で分類を起こす必要はない
 2. **想定出題数** — 中分類ごとの出題数は IPA が公表していない。
