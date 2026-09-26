@@ -1,0 +1,16 @@
+{
+  "name": "ipa-exam-skills",
+  "owner": {
+    "name": "hirahiratriangle"
+  },
+  "metadata": {
+    "description": "IPA情報処理技術者試験の対策アプリづくりのスキル"
+  },
+  "plugins": [
+    {
+      "name": "ipa-exam-skills",
+      "source": "./",
+      "description": "IPA情報処理技術者試験の対策アプリと問題JSONを、手元の公開PDFから作るスキル"
+    }
+  ]
+}
