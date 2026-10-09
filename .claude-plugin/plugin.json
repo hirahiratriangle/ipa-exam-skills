@@ -1,6 +1,6 @@
 {
   "name": "ipa-exam-skills",
-  "version": "0.9.1",
+  "version": "0.8.1",
   "description": "IPA情報処理技術者試験の対策アプリ（Django）と、取り込み用の問題・技術解説JSONを、手元の公開PDFから作るスキル",
   "author": {
     "name": "hirahiratriangle"
